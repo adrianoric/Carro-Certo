@@ -25,13 +25,13 @@
 }
 
 html {
-    background-color: hsl(102, 23%, 85%);
+    background-color: #f5f5f5;     /* Cinza muito claro */
 }
 
 .header {
     padding: 32px;
     box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.1);
-    background-color: #ff8800;
+    background-color: #1a2332;     /* Azul escuro (cor automotiva) */
 }
 
 .logomarca {
@@ -42,7 +42,7 @@ html {
     font-weight: 700;
     font-size: 48px;
     line-height: 4rem;
-    color: #33303e;
+    color: #1a2332;                /* Azul escuro */
     font-family: "Mochiy Pop One", sans-serif;
 }
 
@@ -73,8 +73,8 @@ li.cadastrar a {
     padding: 8px;
     margin: 0;
     border-radius: 10px;
-    border: 1px solid #d1a52a;
-    background-color: #d1a52a;
+    border: 1px solid #e63946;     /* Vermelho automotivo */
+    background-color: #e63946;
 }
 
 li.cadastrar a:hover {
@@ -82,6 +82,8 @@ li.cadastrar a:hover {
     transition: 0.5s;
     padding: 10px 13px;
 }
+
+/* ================= PAINEL PRINCIPAL ================= */
 
 .painel-principal {
     display: flex;
@@ -94,17 +96,52 @@ li.cadastrar a:hover {
     margin-top: 20px;
 }
 
+/* Container das imagens */
+.img-petz {
+    display: flex;
+    gap: 15px;                      /* Espaço entre as colunas */
+    width: 50%;                     /* Ocupa metade da tela */
+}
+
+/* Coluna da esquerda com 2 imagens */
+.fotos-da-esquerda {
+    display: flex;
+    flex-direction: column;         /* Empilha verticalmente */
+    gap: 15px;                      /* Espaço entre as imagens */
+    width: 50%;                     /* Metade do container */
+}
+
+/* Coluna da direita com 2 imagens */
+.fotos-da-direita {
+    display: flex;
+    flex-direction: column;         /* Empilha verticalmente */
+    gap: 15px;                      /* Espaço entre as imagens */
+    width: 50%;                     /* Metade do container */
+}
+
+/* Todas as imagens dos carros */
+.Strada,
+.Mobi,
+.civic,
+.hb20 {
+    width: 100%;                    /* Ocupa toda a largura do container */
+    height: 200px;                  /* Altura fixa */
+    object-fit: cover;              /* Cobre sem distorcer */
+    border-radius: 8px;             /* Bordas arredondadas */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
 .anuncio-petz {
-    width: 50%;
+    width: 45%;                     /* Ajustado para dar espaço às imagens */
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 30px
+    gap: 30px;
 }
 
 .botao-principal {
     padding: 16px 32px;
-    background-color: #ff950d;
+    background-color: #e63946;
     border-radius: 10px;
     color: #f5f5f5;
     font-size: 19px;
@@ -112,163 +149,251 @@ li.cadastrar a:hover {
     font-family: "mochiy pop one", sans-serif;
     border: 1px solid #f5f5f5;
     cursor: pointer;
-    margin-left: 30vw;
+    margin-left: 0;                 /* Remove margem desnecessária */
     display: flex;
 }
 
+.botao-principal:hover {
+    background-color: #c92a35;
+    transition: 0.3s;
+}
+
 .descricao {
-    
     font-weight: 500;
     font-size: 24px;
     line-height: 2rem;
-    color: #4e4b59;
-    
+    color: #2d3436;
 }
 
 /* ================= SEGUNDA SEÇÃO ================= */
 
 .segunda-secao{
-    display: flex;                 /* Flexbox */
-    flex-direction: row;           /* Linha */
-    justify-content: space-around; /* Espaço igual */
-    align-items: center;           /* Centraliza verticalmente */
-    width: 100%;                   /* Largura total */
-    background-color: #ec768640;   /* Fundo com transparência */
-    height: 500px;                 /* Altura fixa */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    background-color: #dfe6e9;
+    height: 500px;
+    padding: 40px 20px;            /* Adiciona padding */
 }
 
 /* Cards de categorias */
-.cachorros, 
-.gatos, 
-.hamsters{
-    display: flex;                 /* Flexbox */
-    flex-direction: column;        /* Em coluna */
-    align-items: center;           /* Centraliza */
-    gap: 10px;                     /* Espaço entre imagem e botão */
+.pickup, 
+.hatch, 
+.motos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;                      /* Aumenta espaço entre imagem e botão */
+}
+
+/* IMAGENS DAS CATEGORIAS - TAMANHO UNIFORME */
+.pickup img,
+.hatch img,
+.motos img{
+    width: 280px;                   /* Largura fixa igual aos botões */
+    height: 200px;                  /* Altura fixa */
+    object-fit: cover;              /* Cobre o espaço sem distorcer */
+    border-radius: 8px;             /* Bordas arredondadas */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Sombra suave */
 }
 
 /* Botões das categorias */
-.botao_cachorro, 
-.botao_gato, 
-.botao_hamsters {
-    font-size: 19px;               /* Tamanho do texto */
-    font-family: 'Mochiy Pop One', sans-serif; /* Fonte */
-    width: 280px;                  /* Largura fixa */
-    padding: 15px 0;               /* Espaçamento interno */
-    background-color: #ff950d;     /* Cor de fundo */
-    color: #f5f5f5;                /* Cor do texto */
-    border-radius: 10px;           /* Bordas arredondadas */
-    border: 1px solid #f5f5f5;     /* Borda */
-    cursor: pointer;               /* Cursor de clique */
+.botao_pickup, 
+.botao_hatch, 
+.botao_motos {
+    font-size: 19px;
+    font-family: 'Mochiy Pop One', sans-serif;
+    width: 280px;
+    padding: 15px 0;
+    background-color: #2d3436;
+    color: #f5f5f5;
+    border-radius: 10px;
+    border: 1px solid #f5f5f5;
+    cursor: pointer;
 
-    display: flex;                 /* Flexbox */
-    justify-content: center;       /* Centraliza horizontalmente */
-    align-items: center;           /* Centraliza verticalmente */
-    text-decoration: none;         /* Remove sublinhado dos links */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
 
-    transition: transform 0.2s, background-color 0.2s; /* Animação */
+    transition: transform 0.2s, background-color 0.2s;
 }
 
 /* Hover dos botões */
-.botao_cachorro:hover, 
-.botao_gato:hover, 
-.botao_hamsters:hover {
-    background-color: #e68600;     /* Escurece a cor */
-    transform: scale(1.05);        /* Aumenta levemente */
+.botao_pickup:hover, 
+.botao_hatch:hover, 
+.botao_motos:hover {
+    background-color: #e63946;
+    transform: scale(1.05);
 }
-
 
 /* ================= TERCEIRA SEÇÃO ================= */
 
 /* Seção que contém os depoimentos */
 .terceira-secao{
-    display: flex;                 /* Ativa o Flexbox */
-    flex-direction: column;        /* Organiza os elementos em coluna */
-    justify-content: space-evenly; /* Distribui o espaço verticalmente de forma igual */
-    align-items: center;           /* Centraliza os itens horizontalmente */
-    width: 100%;                   /* Ocupa toda a largura da tela */
-    height: 400px;                 /* Altura fixa da seção */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    min-height: 400px;
+    padding: 40px 20px;
 }
 
 /* Estilo do título h2 (Depoimentos) */
 h2{
-    font-family:'Mochiy Pop One', sans-serif; /* Fonte personalizada */
-    font-size: 2.5em;             /* Tamanho da fonte relativo ao padrão */
+    font-family:'Mochiy Pop One', sans-serif;
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    color: #1a2332;                /* Azul escuro */
 }
 
 /* Container que agrupa os cards de depoimentos */
 .conteudos{
-    display: flex;                /* Coloca os depoimentos lado a lado */
-    gap: 200px;                   /* Espaço grande entre os cards */
+    display: flex;
+    gap: 50px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 /* Card individual de depoimento */
 .depoimentos{
-    display: flex;                /* Organiza imagem e texto lado a lado */
-    width: 25vw;                  /* Largura proporcional à tela */
-    height: 200px;                /* Altura fixa do card */
-    background-color: #c3c2c7;    /* Fundo cinza claro */
-    border-radius: 8px;           /* Cantos arredondados */
+    display: flex;
+    width: 450px;
+    max-width: 90vw;
+    height: auto;
+    min-height: 200px;
+    background-color: #ffffff;     /* Branco limpo */
+    border-radius: 8px;
+    overflow: hidden;
+    padding: 15px;
+    box-sizing: border-box;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    border: 1px solid #dfe6e9;     /* Borda cinza clara */
+}
+
+/* Imagem dentro do card */
+.depoimentos img{
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    flex-shrink: 0;
 }
 
 /* Área do texto dentro do card */
 .depoimento{
-    display: flex;                /* Flexbox para alinhar texto */
-    flex-direction: column;       /* Texto em coluna */
-    align-items: center;          /* Centraliza horizontalmente */
-    justify-content: center;      /* Centraliza verticalmente */
-    width: 20vw;                  /* Largura limitada do texto */
-    margin-left: 20px;            /* Espaço entre imagem e texto */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    flex: 1;
+    margin-left: 20px;
+    padding: 10px;
+}
+
+/* Texto do depoimento */
+.depoimento p{
+    font-size: 0.9em;
+    line-height: 1.5;
+    margin-bottom: 10px;
+    color: #2d3436;                /* Cinza escuro */
+}
+
+/* Nome do cliente */
+.depoimento strong{
+    font-size: 0.85em;
+    color: #1a2332;                /* Azul escuro */
+    font-weight: 600;
 }
 
 /* ================= RODAPÉ ================= */
 
 /* Estilo geral do rodapé */
 .rodape{
-    background-color: #ff8800;    /* Cor de fundo laranja */
+    background-color: #1a2332;     /* Azul escuro */
 }
 
 /* Conteúdo interno do rodapé */
 .conteudo-rodape{
-    display: flex;                /* Flexbox */
-    justify-content: space-between; /* Espaça os blocos */
-    align-items: center;          /* Centraliza verticalmente */
-    width: 85%;                   /* Largura do conteúdo */
-    margin: 0 auto;               /* Centraliza o rodapé na página */
-    padding: 12px;                /* Espaçamento interno */
-    font-weight: 500;             /* Peso médio da fonte */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 85%;
+    margin: 0 auto;
+    padding: 12px;
+    font-weight: 500;
+    color: #f5f5f5;                /* TEXTO BRANCO */
 }
 
 /* Lista de informações do rodapé */
 .lista ul{
-    font-family:'Mochiy Pop One', sans-serif; /* Fonte personalizada */
-    font-size: 1.2em;             /* Tamanho da fonte */
+    font-family:'Mochiy Pop One', sans-serif;
+    font-size: 1.2em;
+    color: #f5f5f5;                /* TEXTO BRANCO */
+    list-style: none;              /* Remove marcadores */
+}
+
+.lista ul li{
+    color: #f5f5f5;                /* TEXTO BRANCO nos itens */
+    margin-bottom: 8px;            /* Espaçamento entre itens */
+}
+
+/* Título "Sobre nós:" */
+.lista h3,
+.rodape h3{
+    color: #f5f5f5;                /* TEXTO BRANCO */
+    margin-bottom: 10px;
 }
 
 /* Área das redes sociais */
 .redes-sociais{
-    display: flex;                /* Flexbox */
-    flex-direction: column;       /* Organiza em coluna */
-    align-items: center;          /* Centraliza horizontalmente */
-    gap: 0 8px;                   /* (Linha inválida, sobrescrita abaixo) */
-    font-size: 20px;              /* Tamanho do texto */
-    font-weight: 500;             /* Peso médio */
-    color: #f5f5f5 !important;    /* Força a cor branca */
-    gap: 10px;                    /* Espaçamento entre elementos */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 20px;
+    font-weight: 500;
+    color: #f5f5f5 !important;
+    gap: 10px;
+}
+
+/* Título "Nossas redes sociais:" */
+.redes-sociais h3{
+    color: #f5f5f5 !important;     /* TEXTO BRANCO */
+}
+
+/* Ícones das redes sociais */
+.redes-sociais a{
+    color: #f5f5f5;                /* ÍCONES BRANCOS */
+    transition: color 0.3s;
+}
+
+.redes-sociais a:hover{
+    color: #e63946;                /* Vermelho no hover */
+}
+
+/* Se você usa Font Awesome ou ícones SVG */
+.redes-sociais svg,
+.redes-sociais i{
+    color: #f5f5f5;                /* ÍCONES BRANCOS */
+    fill: #f5f5f5;                 /* Para SVGs */
 }
 
 /* Texto de direitos autorais */
 .copyright{
-    padding-bottom: 16px;         /* Espaço abaixo do texto */
-    text-align: center;           /* Centraliza o texto */
-    color: #f5f5f5;               /* Cor branca */
+    padding-bottom: 16px;
+    text-align: center;
+    color: #f5f5f5;                /* TEXTO BRANCO */
+    background-color: #1a2332;     /* Garante fundo escuro */
 }
 
 /* ================= RESPONSIVIDADE MOBILE ================= */
 
 /* Esconde o checkbox do menu hambúrguer */
 #menu-check {
-    display: none;                /* Checkbox invisível */
+    display: none;
 }
 
 /* Regras que só funcionam em telas até 768px */
@@ -276,39 +401,39 @@ h2{
 
     /* Ícone do menu hambúrguer */
     .menu-burguer {
-        display: block;           /* Mostra o ícone */
-        cursor: pointer;          /* Cursor de clique */
-        order: 2;                 /* Muda a ordem no Flexbox */
+        display: block;
+        cursor: pointer;
+        order: 2;
     }
 
     /* Cada linha do ícone hambúrguer */
     .menu-burguer span {
-        display: block;           /* Cada span vira um bloco */
-        width: 30px;              /* Largura da linha */
-        height: 3px;              /* Altura da linha */
-        background-color: #fff;   /* Cor branca */
-        margin: 6px 0;            /* Espaço entre as linhas */
-        transition: 0.3s;         /* Animação suave */
+        display: block;
+        width: 30px;
+        height: 3px;
+        background-color: #fff;
+        margin: 6px 0;
+        transition: 0.3s;
     }
 
     /* Menu de navegação no mobile */
     .links-navegacao {
-        display: none;            /* Começa escondido */
-        flex-direction: column;   /* Links empilhados */
-        position: absolute;       /* Sai do fluxo normal */
-        top: 110px;               /* Distância do topo */
-        left: 0;                  /* Alinha à esquerda */
-        width: 100%;              /* Ocupa toda a tela */
-        background-color: #ff8800;/* Fundo laranja */
-        padding: 20px 0;          /* Espaçamento interno */
-        text-align: center;       /* Centraliza o texto */
-        z-index: 10;              /* Fica acima de outros elementos */
-        box-shadow: 0px 5px 10px rgba(0,0,0,0.1); /* Sombra */
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 110px;
+        left: 0;
+        width: 100%;
+        background-color: #1a2332;  /* Azul escuro */
+        padding: 20px 0;
+        text-align: center;
+        z-index: 10;
+        box-shadow: 0px 5px 10px rgba(0,0,0,0.1);
     }
 
     /* Mostra o menu quando o checkbox estiver marcado */
     #menu-check:checked ~ .links-navegacao {
-        display: flex;            /* Exibe o menu */
+        display: flex;
     }
 
     /* Espaçamento entre os links no mobile */
@@ -323,9 +448,9 @@ h2{
 
     /* Seção principal no mobile */
     .painel-principal {
-        flex-direction: column-reverse; /* Muda a ordem */
-        text-align: center;             /* Centraliza texto */
-        margin-bottom: 50px;            /* Espaço inferior */
+        flex-direction: column-reverse;
+        text-align: center;
+        margin-bottom: 50px;
     }
 
     /* Texto principal ocupa tudo */
@@ -420,4 +545,3 @@ h2{
         padding: 0;
     }
 }
-
