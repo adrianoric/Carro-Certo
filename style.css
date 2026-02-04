@@ -131,7 +131,7 @@ li.cadastrar a:hover {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
 }
 
-.anuncio-petz {
+.anuncio-veiculos {
     width: 45%;                     /* Ajustado para dar espaço às imagens */
     display: flex;
     flex-direction: column;
